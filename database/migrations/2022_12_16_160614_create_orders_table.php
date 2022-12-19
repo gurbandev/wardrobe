@@ -15,6 +15,17 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('customer_id')->index();
+            $table->foreign('customer_id')->references('id')->on('customers')->cascadeOnDelete();
+            $table->string('customer_name');
+            $table->string('customer_phone');
+            $table->string('customer_address')->nullable();
+            $table->string('customer_note')->nullable();
+            $table->unsignedDouble('products_price')->nullable();
+            $table->unsignedDouble('delivery_fee')->default(0);
+            $table->unsignedDouble('total_price')->default(0);
+            $table->unsignedDouble('total_price')->default(0);
+            $table->unsignedTinyInteger('status')->default(0);
             $table->timestamps();
         });
     }
