@@ -24,7 +24,6 @@ return new class extends Migration
             $table->unsignedDouble('products_price')->nullable();
             $table->unsignedDouble('delivery_fee')->default(0);
             $table->unsignedDouble('total_price')->default(0);
-            $table->unsignedDouble('total_price')->default(0);
             $table->unsignedTinyInteger('status')->default(0);
             $table->timestamps();
         });

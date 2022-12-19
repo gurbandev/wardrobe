@@ -21,10 +21,6 @@ return new class extends Migration
             $table->foreign('category_id')->references('id')->on('categories')->cascadeOnDelete();
             $table->unsignedBigInteger('brand_id')->index();
             $table->foreign('brand_id')->references('id')->on('brands')->cascadeOnDelete();
-            $table->unsignedBigInteger('color_id')->index()->nullable();
-            $table->foreign('color_id')->references('id')->on('attribute_values')->nullOnDelete();
-            $table->unsignedBigInteger('size_id')->index()->nullable();
-            $table->foreign('size_id')->references('id')->on('attribute_values')->nullOnDelete();
             $table->string('code')->index();
             $table->string('name_tm');
             $table->string('name_en')->nullable();
