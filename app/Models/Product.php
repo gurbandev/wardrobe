@@ -25,7 +25,7 @@ class Product extends Model
     protected static function booted()
     {
         static::saving(function ($obj) {
-            $obj->slug = str()->slug($obj->full_name_tm) . '-' . $obj->id;
+            $obj->slug = str()->slug($obj->full_name_tm) . '-' . str()->random(10);
         });
     }
 
