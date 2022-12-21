@@ -40,10 +40,10 @@ class CategorySeeder extends Seeder
             for ($j = 0; $j < count($objs[$i][2]); $j++) {
                 Category::create([
                     'parent_id' => $category->id,
-                    'name_tm' => $objs[$i][$j][0],
-                    'name_en' => $objs[$i][$j][1],
-                    'product_name_tm' => $objs[$i][$j][0],
-                    'product_name_en' => $objs[$i][$j][1],
+                    'name_tm' => $objs[$i][2][$j][0],
+                    'name_en' => $objs[$i][2][$j][1],
+                    'product_name_tm' => $objs[$i][2][$j][2],
+                    'product_name_en' => $objs[$i][2][$j][3],
                     'sort_order' => $j + 1,
                 ]);
             }
