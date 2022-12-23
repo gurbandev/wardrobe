@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('parent_id')->references('id')->on('locations')->nullOnDelete();
             $table->string('name_tm');
             $table->string('name_en')->nullable();
-            $table->unsignedInteger('sort_order')->default(1);
+            $table->unsignedDouble('delivery_fee')->default(0);
         });
     }
 

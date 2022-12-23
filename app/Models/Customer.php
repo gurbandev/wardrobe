@@ -25,4 +25,18 @@ class Customer extends Model
         return $this->hasMany(Order::class)
             ->orderBy('id', 'desc');
     }
+
+
+    public function customerAddresses()
+    {
+        return $this->hasMany(CustomerAddress::class)
+            ->orderBy('id', 'desc');
+    }
+
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'customer_product')
+            ->orderBy('id', 'desc');
+    }
 }

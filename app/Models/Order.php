@@ -19,6 +19,12 @@ class Order extends Model
     ];
 
 
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
+    }
+
+
     public function customer()
     {
         return $this->belongsTo(Customer::class);
@@ -27,6 +33,7 @@ class Order extends Model
 
     public function orderProducts()
     {
-        return $this->hasMany(OrderProduct::class);
+        return $this->hasMany(OrderProduct::class)
+            ->orderBy('id');
     }
 }

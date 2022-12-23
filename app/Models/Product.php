@@ -30,12 +30,6 @@ class Product extends Model
     }
 
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -62,7 +56,8 @@ class Product extends Model
 
     public function orderProducts()
     {
-        return $this->hasMany(OrderProduct::class);
+        return $this->hasMany(OrderProduct::class)
+            ->orderBy('id', 'desc');
     }
 
 
@@ -70,6 +65,13 @@ class Product extends Model
     {
         return $this->belongsToMany(AttributeValue::class, 'product_attribute_value')
             ->orderByPivot('sort_order');
+    }
+
+
+    public function customers()
+    {
+        return $this->belongsToMany(Customer::class, 'customer_product')
+            ->orderBy('id', 'desc');
     }
 
 
@@ -99,44 +101,22 @@ class Product extends Model
     }
 
 
-    public function isOwner()
-    {
-        if ($this->user_id == auth()->id()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-
     public function getFullName()
     {
-        $locale = app()->getLocale();
-        switch ($locale) {
-            case 'tm':
-                return $this->full_name_tm;
-                break;
-            case 'en':
-                return $this->full_name_en ?: $this->full_name_tm;
-                break;
-            default:
-                return $this->full_name_tm;
+        if (app()->getLocale() == 'en') {
+            return $this->full_name_en ?: $this->full_name_tm;
+        } else {
+            return $this->full_name_tm;
         }
     }
 
 
     public function getName()
     {
-        $locale = app()->getLocale();
-        switch ($locale) {
-            case 'tm':
-                return $this->name_tm;
-                break;
-            case 'en':
-                return $this->name_en ?: $this->name_tm;
-                break;
-            default:
-                return $this->name_tm;
+        if (app()->getLocale() == 'en') {
+            return $this->name_en ?: $this->name_tm;
+        } else {
+            return $this->name_tm;
         }
     }
 }

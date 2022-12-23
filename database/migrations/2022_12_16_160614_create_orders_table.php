@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('customer_id')->index()->nullable();
             $table->foreign('customer_id')->references('id')->on('customers')->nullOnDelete();
+            $table->string('code')->unique();
             $table->string('customer_name');
             $table->string('customer_phone');
             $table->string('customer_address')->nullable();

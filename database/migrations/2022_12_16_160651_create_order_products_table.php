@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreign('order_id')->references('id')->on('orders')->cascadeOnDelete();
             $table->unsignedDouble('price')->nullable();
             $table->unsignedInteger('quantity')->default(0);
+            $table->unsignedFloat('discount_percent')->default(0);
             $table->unsignedDouble('total_price')->default(0);
             $table->timestamp('created_at')->nullable();
         });
