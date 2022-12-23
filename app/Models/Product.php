@@ -54,6 +54,13 @@ class Product extends Model
     }
 
 
+    public function images()
+    {
+        return $this->hasMany(ProductImage::class)
+            ->orderBy('id');
+    }
+
+
     public function orderProducts()
     {
         return $this->hasMany(OrderProduct::class)

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('phone')->unique();
             $table->string('code');
+            $table->unsignedTinyInteger('status')->default(0);
             $table->timestamps();
         });
     }
