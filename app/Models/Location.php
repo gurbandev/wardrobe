@@ -35,4 +35,18 @@ class Location extends Model
             return $this->name_tm;
         }
     }
+
+    //
+
+    public function parent() // whereNull('parent_id');
+    {
+        return $this->belongsTo(self::class, 'parent_id');
+    }
+
+
+    public function child() // whereNotNull('parent_id')
+    {
+        return $this->hasMany(self::class, 'parent_id')
+            ->orderBy('name_tm');
+    }
 }
