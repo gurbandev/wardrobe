@@ -82,6 +82,16 @@ class Product extends Model
     }
 
 
+    public function isNew()
+    {
+        if ($this->created_at >= Carbon::now()->subMonth()->toDateTimeString()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     public function isDiscount()
     {
         if ($this->discount_percent > 0 and $this->discount_start <= Carbon::now()->toDateTimeString() and $this->discount_end >= Carbon::now()->toDateTimeString()) {

@@ -17,7 +17,10 @@ class VerificationFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'phone' => fake()->numberBetween(60000000, 65999999),
+            'code' => fake()->numberBetween(10000, 99999),
+            'status' => fake()->boolean(80),
+            'created_at' => fake()->dateTimeBetween('-1 year', 'now')->format('Y-m-d H:i:s'),
         ];
     }
 }

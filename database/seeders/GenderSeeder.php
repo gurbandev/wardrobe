@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Brand;
+use App\Models\Gender;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class BrandSeeder extends Seeder
+class GenderSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,16 +16,14 @@ class BrandSeeder extends Seeder
     public function run()
     {
         $objs = [
-            'Nike',
-            'Defacto',
-            'Lacoste',
-            'Zara',
-            'Mavi',
+            ['Erkek', 'Male'],
+            ['Aýal', 'Female'],
         ];
 
         foreach ($objs as $obj) {
-            Brand::create([
-                'name' => $obj,
+            Gender::create([
+                'name_tm' => $obj[0],
+                'name_en' => $obj[1],
             ]);
         }
     }

@@ -22,7 +22,8 @@ class OrderProduct extends Model
 
     public function order()
     {
-        return $this->belongsTo(Order::class);
+        return $this->belongsTo(Order::class)
+            ->withTrashed();
     }
 
 

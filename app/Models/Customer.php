@@ -14,6 +14,11 @@ class Customer extends Authenticatable
         'id',
     ];
 
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
     protected $casts = [
         'created_at' => 'datetime',
     ];

@@ -35,20 +35,9 @@ class AttributeValueSeeder extends Seeder
                 ['name_tm' => '3XL', 'name_en' => null],
                 ['name_tm' => '4XL', 'name_en' => null],
                 ['name_tm' => '5XL', 'name_en' => null],
-                ['name_tm' => '6XL', 'name_en' => null],
-                ['name_tm' => '7XL', 'name_en' => null],
-                ['name_tm' => '36', 'name_en' => null],
-                ['name_tm' => '37', 'name_en' => null],
-                ['name_tm' => '38', 'name_en' => null],
-                ['name_tm' => '39', 'name_en' => null],
-                ['name_tm' => '40', 'name_en' => null],
-                ['name_tm' => '41', 'name_en' => null],
-                ['name_tm' => '42', 'name_en' => null],
-                ['name_tm' => '43', 'name_en' => null],
-                ['name_tm' => '44', 'name_en' => null],
-                ['name_tm' => '45', 'name_en' => null],
             ]],
         ];
+
         for ($i = 0; $i < count($objs); $i++) {
             $attribute = Attribute::create([
                 'name_tm' => $objs[$i]['name_tm'],
@@ -56,6 +45,7 @@ class AttributeValueSeeder extends Seeder
                 'product_name' => $objs[$i]['product_name'],
                 'sort_order' => $i + 1,
             ]);
+
             for ($j = 0; $j < count($objs[$i]['values']); $j++) {
                 AttributeValue::create([
                     'attribute_id' => $attribute->id,

@@ -24,19 +24,31 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CategorySeeder::class,
             BrandSeeder::class,
+            GenderSeeder::class,
             AttributeValueSeeder::class,
             LocationSeeder::class,
         ]);
 
-//        Product::factory()->count(100)->create();
-//        Verification::factory()->count(20)->create();
-//        Customer::factory()->count(15)->create();
-//        CustomerAddress::factory()->count(30)->create();
-//        Order::factory()->count(40)->create();
-//        OrderProduct::factory()->count(100)->create();
-//
-//        $this->call([
-//            OrderSeeder::class,
-//        ]);
+        Product::factory()->count(500)->create();
+
+        for ($i = 0; $i < 50; $i++) {
+            $verification = Verification::factory()->create();
+            if ($verification->status) {
+                Customer::factory()
+                    ->has(CustomerAddress::factory()->count(rand(1, 2)))
+                    ->create([
+                        'username' => $verification->phone,
+                        'password' => bcrypt($verification->code),
+                        'created_at' => $verification->created_at,
+                    ]);
+            }
+        }
+
+        for ($i = 0; $i < 50; $i++) {
+            OrderProduct::factory()
+                ->count(rand(1, 5))
+                ->for(Order::factory())
+                ->create();
+        }
     }
 }

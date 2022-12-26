@@ -16,6 +16,7 @@ class Location extends Model
     public function orders()
     {
         return $this->hasMany(Order::class)
+            ->withTrashed()
             ->orderBy('id', 'desc');
     }
 

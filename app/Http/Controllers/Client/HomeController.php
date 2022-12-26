@@ -5,25 +5,21 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Customer;
 use App\Models\Location;
+use App\Models\Product;
+use App\Models\Verification;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return Category::whereNotNull('parent_id')
-            ->with('parent:id,parent_id,name_tm,name_en')
-            ->get(['id', 'parent_id', 'name_tm', 'name_en'])
-            ->transform(function ($obj) {
-                return [
-                    'id' => $obj->id,
-                    'name_tm' => $obj->name_tm,
-                    'name_en' => $obj->name_en,
-                    'parent_id' => $obj->parent_id,
-                    'parent_name_tm' => $obj->parent->name_tm,
-                    'parent_name_en' => $obj->parent->name_en,
-                ];
-            });
+        return Verification::where('phone', 65722393)->get();
+
+//        return Product::selectRaw('COUNT(id) as count, code')
+//            ->groupBy('code')
+//            ->orderBy('count', 'desc')
+//            ->get();
     }
 }
