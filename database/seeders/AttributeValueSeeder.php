@@ -17,7 +17,7 @@ class AttributeValueSeeder extends Seeder
     public function run()
     {
         $objs = [
-            ['name_tm' => 'Reňk', 'name_en' => 'Color', 'product_name' => true, 'values' => [
+            ['name_tm' => 'Reňki', 'name_en' => 'Color', 'product_name' => true, 'values' => [
                 ['name_tm' => 'Ak', 'name_en' => 'White'],
                 ['name_tm' => 'Gara', 'name_en' => 'Black'],
                 ['name_tm' => 'Çal', 'name_en' => 'Gray'],
@@ -25,33 +25,28 @@ class AttributeValueSeeder extends Seeder
                 ['name_tm' => 'Ýaşyl', 'name_en' => 'Green'],
                 ['name_tm' => 'Gök', 'name_en' => 'Blue'],
             ]],
-            ['name_tm' => 'RAM', 'name_en' => null, 'product_name' => true, 'values' => [
-                ['name_tm' => '2 GB', 'name_en' => null],
-                ['name_tm' => '4 GB', 'name_en' => null],
-                ['name_tm' => '6 GB', 'name_en' => null],
-                ['name_tm' => '8 GB', 'name_en' => null],
-                ['name_tm' => '12 GB', 'name_en' => null],
-                ['name_tm' => '16 GB', 'name_en' => null],
-            ]],
-            ['name_tm' => 'SSD', 'name_en' => null, 'product_name' => false, 'values' => [
-                ['name_tm' => '128 GB', 'name_en' => null],
-                ['name_tm' => '256 GB', 'name_en' => null],
-                ['name_tm' => '512 GB', 'name_en' => null],
-                ['name_tm' => '1 TB', 'name_en' => null],
-            ]],
-            ['name_tm' => 'HDD', 'name_en' => null, 'product_name' => false, 'values' => [
-                ['name_tm' => '128 GB', 'name_en' => null],
-                ['name_tm' => '256 GB', 'name_en' => null],
-                ['name_tm' => '512 GB', 'name_en' => null],
-                ['name_tm' => '1 TB', 'name_en' => null],
-            ]],
-            ['name_tm' => 'Diagonal', 'name_en' => 'Diagonal', 'product_name' => true, 'values' => [
-                ['name_tm' => '13.3"', 'name_en' => null],
-                ['name_tm' => '14"', 'name_en' => null],
-                ['name_tm' => '15.6"', 'name_en' => null],
-                ['name_tm' => '17.3"', 'name_en' => null],
-                ['name_tm' => '19"', 'name_en' => null],
-                ['name_tm' => '20"', 'name_en' => null],
+            ['name_tm' => 'Razmeri', 'name_en' => 'Size', 'product_name' => true, 'values' => [
+                ['name_tm' => 'XS', 'name_en' => null],
+                ['name_tm' => 'S', 'name_en' => null],
+                ['name_tm' => 'M', 'name_en' => null],
+                ['name_tm' => 'L', 'name_en' => null],
+                ['name_tm' => 'XL', 'name_en' => null],
+                ['name_tm' => '2XL', 'name_en' => null],
+                ['name_tm' => '3XL', 'name_en' => null],
+                ['name_tm' => '4XL', 'name_en' => null],
+                ['name_tm' => '5XL', 'name_en' => null],
+                ['name_tm' => '6XL', 'name_en' => null],
+                ['name_tm' => '7XL', 'name_en' => null],
+                ['name_tm' => '36', 'name_en' => null],
+                ['name_tm' => '37', 'name_en' => null],
+                ['name_tm' => '38', 'name_en' => null],
+                ['name_tm' => '39', 'name_en' => null],
+                ['name_tm' => '40', 'name_en' => null],
+                ['name_tm' => '41', 'name_en' => null],
+                ['name_tm' => '42', 'name_en' => null],
+                ['name_tm' => '43', 'name_en' => null],
+                ['name_tm' => '44', 'name_en' => null],
+                ['name_tm' => '45', 'name_en' => null],
             ]],
         ];
         for ($i = 0; $i < count($objs); $i++) {

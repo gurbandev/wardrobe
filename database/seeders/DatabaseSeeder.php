@@ -28,15 +28,15 @@ class DatabaseSeeder extends Seeder
             LocationSeeder::class,
         ]);
 
-        Product::factory()->count(100)->create();
-        Verification::factory()->count(20)->create();
-        Customer::factory()->count(15)->create();
-        CustomerAddress::factory()->count(30)->create();
-        Order::factory()->count(40)->create();
-        OrderProduct::factory()->count(100)->create();
-
-        $this->call([
-            OrderSeeder::class,
-        ]);
+//        Product::factory()->count(100)->create();
+//        Verification::factory()->count(20)->create();
+//        Customer::factory()->count(15)->create();
+//        CustomerAddress::factory()->count(30)->create();
+//        Order::factory()->count(40)->create();
+//        OrderProduct::factory()->count(100)->create();
+//
+//        $this->call([
+//            OrderSeeder::class,
+//        ]);
     }
 }
